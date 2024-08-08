@@ -1,0 +1,57 @@
+Using cuda device
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+Logging to ./tensorboard_logs_ppo/PPO_14
+WARNING: attempting to unsubscribe from stream but sensor wasn't listening: Actor 18014 (sensor.other.collision) 
+/data/zhuzhuan/anaconda3/envs/interfuser/lib/python3.7/site-packages/pandas/util/testing.py:27: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  import pandas._libs.testing as _testing
+/data/zhuzhuan/anaconda3/envs/interfuser/lib/python3.7/site-packages/networkx/classes/graph.py:23: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3,and in 3.9 it will stop working
+  from collections import Mapping
+/data/zhuzhuan/anaconda3/envs/interfuser/lib/python3.7/site-packages/networkx/classes/reportviews.py:95: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3,and in 3.9 it will stop working
+  from collections import Mapping, Set, Iterable
+/data/zhuzhuan/anaconda3/envs/interfuser/lib/python3.7/site-packages/scipy/fft/__init__.py:97: DeprecationWarning: The module numpy.dual is deprecated.  Instead of using dual, use the functions directly from numpy or scipy.
+  from numpy.dual import register_func
+/data/zhuzhuan/anaconda3/envs/interfuser/lib/python3.7/site-packages/scipy/sparse/sputils.py:17: DeprecationWarning: `np.typeDict` is a deprecated alias for `np.sctypeDict`.
+  supported_dtypes = [np.typeDict[x] for x in supported_dtypes]
+/data/zhuzhuan/anaconda3/envs/interfuser/lib/python3.7/site-packages/scipy/special/orthogonal.py:81: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  from numpy import (exp, inf, pi, sqrt, floor, sin, cos, around, int,
+/data/zhuzhuan/anaconda3/envs/interfuser/lib/python3.7/site-packages/networkx/readwrite/graphml.py:346: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  (np.int, "int"), (np.int8, "int"),
+/data/zhuzhuan/VR_driving_data/data/script/stable_baselines/stable_baselines3-2.0.0/stable_baselines3/common/vec_env/patch_gym.py:50: UserWarning: You provided an OpenAI Gym environment. We strongly recommend transitioning to Gymnasium environments. Stable-Baselines3 is automatically wrapping your environments in a compatibility layer, which could potentially cause issues.
+  "You provided an OpenAI Gym environment. "
+/data/zhuzhuan/anaconda3/envs/interfuser/lib/python3.7/site-packages/gym/core.py:52: DeprecationWarning: [33mWARN: The argument mode in render method is deprecated; use render_mode during environment initialization instead.
+See here for more information: https://www.gymlibrary.ml/content/api/[0m
+  "The argument mode in render method is deprecated; "
+/data/zhuzhuan/VR_driving_data/data/script/leftturn_eye/env_leftturn_gym.py:597: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  self.control.brake = np.float(abs(action)) if action<0 else 0
+Traceback (most recent call last):
+  File "sb3_train.py", line 144, in <module>
+    model.learn(total_timesteps=500000)
+  File "/data/zhuzhuan/VR_driving_data/data/script/stable_baselines/stable_baselines3-2.0.0/stable_baselines3/ppo/ppo.py", line 314, in learn
+    progress_bar=progress_bar,
+  File "/data/zhuzhuan/VR_driving_data/data/script/stable_baselines/stable_baselines3-2.0.0/stable_baselines3/common/on_policy_algorithm.py", line 259, in learn
+    continue_training = self.collect_rollouts(self.env, callback, self.rollout_buffer, n_rollout_steps=self.n_steps)
+  File "/data/zhuzhuan/VR_driving_data/data/script/stable_baselines/stable_baselines3-2.0.0/stable_baselines3/common/on_policy_algorithm.py", line 178, in collect_rollouts
+    new_obs, rewards, dones, infos = env.step(clipped_actions)
+  File "/data/zhuzhuan/VR_driving_data/data/script/stable_baselines/stable_baselines3-2.0.0/stable_baselines3/common/vec_env/base_vec_env.py", line 197, in step
+    return self.step_wait()
+  File "/data/zhuzhuan/VR_driving_data/data/script/stable_baselines/stable_baselines3-2.0.0/stable_baselines3/common/vec_env/dummy_vec_env.py", line 59, in step_wait
+    self.actions[env_idx]
+  File "/data/zhuzhuan/VR_driving_data/data/script/stable_baselines/stable_baselines3-2.0.0/stable_baselines3/common/monitor.py", line 94, in step
+    observation, reward, terminated, truncated, info = self.env.step(action)
+  File "/data/zhuzhuan/anaconda3/envs/interfuser/lib/python3.7/site-packages/shimmy/openai_gym_compatibility.py", line 255, in step
+    obs, reward, done, info = self.gym_env.step(action)
+  File "/data/zhuzhuan/VR_driving_data/data/script/leftturn_eye/env_leftturn_gym.py", line 570, in step
+    self.control = self.agent.run_step()
+  File "/data/zhuzhuan/VR_driving_data/data/script/leftturn_eye/agents/navigation/basic_agent.py", line 180, in run_step
+    affected_by_tlight, _ = self._affected_by_traffic_light(lights_list, max_tlight_distance)
+  File "/data/zhuzhuan/VR_driving_data/data/script/leftturn_eye/agents/navigation/basic_agent.py", line 235, in _affected_by_traffic_light
+    object_waypoint = self._map.get_waypoint(object_location)
+KeyboardInterrupt
+WARNING: sensor object went out of the scope but the sensor is still alive in the simulation: Actor 18024 (sensor.camera.semantic_segmentation) 
+WARNING: sensor object went out of the scope but the sensor is still alive in the simulation: Actor 18023 (sensor.camera.rgb) 
+terminate called without an active exception
